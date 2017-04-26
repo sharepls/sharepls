@@ -17,8 +17,6 @@ class CreateInventoriesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->string('name');
-            $table->decimal('latitude', 9, 6);
-            $table->decimal('longitude', 8, 6);
             $table->timestamps();
         });
     }

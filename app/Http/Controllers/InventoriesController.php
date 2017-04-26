@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\View\Factory;
 
@@ -34,23 +35,28 @@ class InventoriesController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Requests\StoreInventoryRequest|Request $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\StoreInventoryRequest $request)
     {
-        //
+        $inventory = $request->user()->inventories()->create([
+            'name' => $request->input('name')
+        ]);
+        return redirect()->route('inventories.show', $inventory->id);
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param  int $id
+     * @param Request $request
+     * @return Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        //
+        $inventory = $request->user()->inventories()->findOrFail($id);
+        return view('inventories.show')->with('inventory', $inventory);
     }
 
     /**
@@ -67,11 +73,11 @@ class InventoriesController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
+     * @param Requests\UpdateInventoryRequest|Request $request
+     * @param  int $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\UpdateInventoryRequest $request, $id)
     {
         //
     }

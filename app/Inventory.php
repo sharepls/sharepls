@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Inventory extends Model
 {
     protected $fillable = [
-      'name', 'latitude', 'longitude'
+      'name'
     ];
 
     public function user()

@@ -34,14 +34,6 @@
                                 <label for="name">Name</label>
                                 <input id="name" type="text" name="name" class="form-control">
                             </div>
-                            <div class="form-group">
-                                <label for="latitude">Latitude</label>
-                                <input id="latitude" type="text" name="latitude" class="form-control">
-                            </div>
-                            <div class="form-group">
-                                <label for="longitude">Longitude</label>
-                                <input id="longitude" type="text" name="longitude" class="form-control">
-                            </div>
                             <button class="btn btn-success" type="submit">
                                 <i class="fa fa-save" aria-hidden="true">&nbsp;</i> Save
                             </button>
