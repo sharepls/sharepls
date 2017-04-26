@@ -39,6 +39,7 @@
                                     <i class="fa fa-cube pull-right" aria-hidden="true">&nbsp;</i>
                                 </h4>
                             </div>
+
                            <!-- TODO $inventory->objects -->
                         </div>
                     </div>

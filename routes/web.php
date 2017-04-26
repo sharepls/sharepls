@@ -20,3 +20,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 Route::resource('inventories', 'InventoriesController');
+Route::resource('inventories.objects', 'InventoriesObjectsController');
+
+Route::resource('objects', 'ObjectsController');
+

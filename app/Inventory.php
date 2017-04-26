@@ -14,4 +14,9 @@ class Inventory extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function objects()
+    {
+        return $this->hasMany(Object::class);
+    }
 }

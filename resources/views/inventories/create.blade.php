@@ -20,8 +20,8 @@
                                 Inventories
                             </h4>
                         </div>
-                        <a class="btn btn-default" href="{{ url()->previous() }}">
-                            <i class="fa fa-chevron-left" aria-hidden="true">&nbsp;</i> Back
+                        <a class="btn btn-default" href="{{ route('inventories.index') }}">
+                            <i class="fa fa-chevron-left" aria-hidden="true">&nbsp;</i> Index
                         </a>
                     </div>
                 </div>
