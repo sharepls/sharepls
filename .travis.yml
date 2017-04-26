@@ -30,3 +30,6 @@ cache:
 
 env:
   - TRAVIS_NODE_VERSION="7.9.0"
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
