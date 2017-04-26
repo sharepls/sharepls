@@ -54,8 +54,14 @@
                             </li>
 
                             <li>
-                                <a href="{{ url('inventories') }}">
+                                <a href="{{ route('inventories.index') }}">
                                     <i class="fa fa-cubes" aria-hidden="true">&nbsp;</i> Inventories
+                                </a>
+                            </li>
+
+                            <li>
+                                <a href="{{ route('objects.index') }}">
+                                    <i class="fa fa-th-large" aria-hidden="true">&nbsp;</i> Objects
                                 </a>
                             </li>
                         @else

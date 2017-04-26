@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Object extends Model
 {
     protected $fillable = [
-        'name', 'description'
+        'inventory_id', 'name', 'description'
     ];
 
     /**
@@ -16,5 +16,10 @@ class Object extends Model
     public function inventory()
     {
         return $this->belongsTo(Inventory::class);
+    }
+
+    public function objects()
+    {
+        return $this->hasMany(Object::class);
     }
 }

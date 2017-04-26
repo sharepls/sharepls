@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests;
 use Illuminate\Http\Request;
 
 class ObjectsController extends Controller
@@ -11,9 +12,10 @@ class ObjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $objects = $request->user()->objects()->get();
+        return view('objects.index')->with('objects', $objects);
     }
 
     /**
@@ -21,9 +23,10 @@ class ObjectsController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $inventories = $request->user()->inventories()->get();
+        return view('objects.create')->with('inventories', $inventories);
     }
 
     /**
@@ -32,9 +35,14 @@ class ObjectsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Requests\StoreObjectRequest $request)
     {
-        //
+        $object = $request->user()->objects()->create([
+            'inventory_id' => $request->input('inventory_id'),
+            'name' => $request->input('name'),
+            'description' => $request->input('description')
+        ]);
+        return redirect()->route('objects.show', $object->id);
     }
 
     /**
@@ -66,7 +74,7 @@ class ObjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Requests\UpdateObjectRequest $request, $id)
     {
         //
     }

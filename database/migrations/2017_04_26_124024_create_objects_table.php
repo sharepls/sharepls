@@ -15,9 +15,10 @@ class CreateObjectsTable extends Migration
     {
         Schema::create('objects', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->integer('inventory_id')->unsigned();
             $table->string('name');
-            $table->string('description');
+            $table->longText('description');
             $table->timestamps();
         });
     }
