@@ -1,9 +1,34 @@
 
 // Fonts
-@import url(https://fonts.googleapis.com/css?family=Raleway:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,600|Sacramento);
 
 // Variables
 @import "variables";
 
 // Bootstrap
 @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+
+// Boostrap navbar-brand using
+.navbar-brand {
+  font-family: 'Sacramento', sans-serif;
+  font-size: 30px;
+}
+
+// Bootstrap dropdown are centered
+.dropdown {
+  a {
+    text-align: center;
+  }
+  li {
+    a {
+      text-align: center;
+    }
+  }
+}
+.navbar-nav {
+  li {
+    a {
+      text-align: center;
+    }
+  }
+}
