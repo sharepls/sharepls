@@ -32,11 +32,26 @@
 
                 <div class="panel panel-default">
                     <div class="panel-body">
-                        <div class="page-header">
-                            <h5 class="text-center">Information</h5>
+
+                        <div>
+
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-pills" role="tablist">
+                                <li role="presentation" class="active"><a href="#information" aria-controls="information" role="tab" data-toggle="pill">Information</a></li>
+                            </ul>
+
+                            <br>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="information">
+                                    <!-- Object information -->
+                                    <h4>{{ $object->name }}</h4>
+                                    <p>{{ $object->description }}</p>
+                                </div>
+                            </div>
+
                         </div>
-                        <h4>{{ $object->name }}</h4>
-                        <p>{{ $object->description }}</p>
                     </div>
                 </div>
 

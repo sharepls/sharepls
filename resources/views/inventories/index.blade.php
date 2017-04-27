@@ -43,7 +43,9 @@
                             <div class="row">
                                 @foreach($inventory->objects as $object)
                                     <div class="col-xs-4">
-                                        <img class="img-responsive img-rounded" src="https://placehold.it/180x180" alt="">
+                                        <a href="{{ route('objects.show', $object->id) }}">
+                                            <img class="img-responsive img-rounded" src="https://placehold.it/180x180" alt="">
+                                        </a>
                                     </div>
                                 @endforeach
                             </div>
