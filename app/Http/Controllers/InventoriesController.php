@@ -18,7 +18,7 @@ class InventoriesController extends Controller
      */
     public function index(Request $request)
     {
-        $inventories = $request->user()->inventories()->get();
+        $inventories = $request->user()->inventories()->with('objects')->get();
         return view('inventories.index')->with('inventories', $inventories);
     }
 

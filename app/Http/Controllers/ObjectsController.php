@@ -51,9 +51,10 @@ class ObjectsController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Request $request, $id)
     {
-        //
+        $object = $request->user()->objects()->findOrFail($id);
+        return view('objects.show')->with('object', $object);
     }
 
     /**

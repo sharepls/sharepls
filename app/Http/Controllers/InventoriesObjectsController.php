@@ -23,7 +23,7 @@ class InventoriesObjectsController extends Controller
      */
     public function create(Request $request, $inventoryId)
     {
-        $inventory = $request->user()->inventories()->findOrFail($inventoryId);
+        $inventory = $request->user()->inventories()->findOrFail($inventoryId)->with('objects')->get();
         return view('inventories.objects.create')->with('inventory', $inventory);
     }
 

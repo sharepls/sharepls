@@ -40,7 +40,13 @@
                                 </h4>
                             </div>
 
-                           <!-- TODO $inventory->objects -->
+                            <div class="row">
+                                @foreach($inventory->objects as $object)
+                                    <div class="col-xs-4">
+                                        <img class="img-responsive img-rounded" src="https://placehold.it/180x180" alt="">
+                                    </div>
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 @endforeach

@@ -28,24 +28,20 @@
 
                 @else
 
-                    @foreach($objects as $object)
 
-                        <div class="panel panel-default">
-                            <div class="panel-body">
-                                <div class="row">
-                                    <div class="col-xs-4">
+                    <div class="row">
+                        @foreach($objects as $object)
+                            <div class="col-xs-4">
+                                <div class="panel panel-default">
+                                    <div class="panel-body">
                                         <a href="{{ route('objects.show', $object->id) }}">
                                             <img class="img-responsive img-rounded" src="https://placehold.it/180x180">
                                         </a>
                                     </div>
-                                    <div class="col-xs-8">
-                                        <h4>{{ $object->name }}</h4>
-                                        <p>{{ $object->description }}</p>
-                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    </div>
                 @endif
             </div>
         </div>
