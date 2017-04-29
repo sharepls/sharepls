@@ -85,7 +85,6 @@
 
                 <div class="links">
                     <a href="https://github.com/sharepls/sharepls">GitHub</a>
-                    <a href="https://iantorres.me">Ian Torres</a>
                 </div>
             </div>
         </div>
